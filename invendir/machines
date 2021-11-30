@@ -1,0 +1,13 @@
+[condor_ce]
+node0
+[lrms]
+node1
+[HA]
+node0
+node1
+[condor_wn]
+node[2:3]
+[site_bdii]
+node2
+[apelclient]
+node3

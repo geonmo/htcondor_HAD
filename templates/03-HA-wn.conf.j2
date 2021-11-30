@@ -1,0 +1,16 @@
+##########################################################################
+# A sample configuration file for central managers, to enable the        #
+# the high availability  mechanism.                                      #
+##########################################################################
+
+#########################################################################
+## THE FOLLOWING MUST BE IDENTICAL ON ALL POTENTIAL CENTRAL MANAGERS.   #
+#########################################################################
+## For simplicity in writing other expressions, define a variable
+## for each potential central manager in the pool.
+## These are samples.
+CENTRAL_MANAGER1 = {{ central_manager1 }}
+CENTRAL_MANAGER2 = {{ central_manager2 }}
+## A list of all potential central managers in the pool.
+CONDOR_HOST = $(CENTRAL_MANAGER1),$(CENTRAL_MANAGER2)
+

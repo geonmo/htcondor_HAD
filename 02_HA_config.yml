@@ -1,0 +1,28 @@
+- name: 03-cluster.conf for htcondor (HA Servers)
+  hosts: HA
+  vars_files:
+    - vars/ha_environ.yml
+  tasks:
+    - template:
+        src: templates/03-HA-centralmanager.conf.j2
+        dest: /etc/condor/config.d/03-HA.conf
+      notify: restart condor
+  handlers:
+   - name:  restart condor
+     service: 
+       name: condor
+       state: restarted
+- name: 03-cluster.conf for htcondor (WN Servers)
+  hosts: condor_wn
+  vars_files:
+    - vars/ha_environ.yml
+  tasks:
+    - template:
+        src: templates/03-HA-wn.conf.j2
+        dest: /etc/condor/config.d/03-HA.conf
+      notify: restart condor
+  handlers:
+   - name:  restart condor
+     service: 
+       name: condor
+       state: restarted

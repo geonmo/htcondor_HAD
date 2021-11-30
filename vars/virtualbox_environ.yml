@@ -1,0 +1,8 @@
+---
+condor_version: 9.0
+condor_admin: "admin@node0.intranet.local"
+condor_domain: "intranet.local"
+condor_host: "node1.intranet.local"
+condor_name: "HTCondor Cluster"
+condor_pool_password: "hello world"
+
